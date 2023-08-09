@@ -1,6 +1,7 @@
 export const theme = {
     color: {
         primary: '#00A786',
-        secondary: 'white'
+        secondary: 'white',
+        error: 'red'
     }
   };
