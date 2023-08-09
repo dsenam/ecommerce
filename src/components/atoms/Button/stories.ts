@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from './Button';
+import { Button } from '.';
 
 
 
@@ -14,9 +14,7 @@ const meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -38,14 +36,14 @@ export const Secondary: Story = {
 
 export const Large: Story = {
   args: {
-    size: 'large',
+    
     label: 'Button',
   },
 };
 
 export const Small: Story = {
   args: {
-    size: 'small',
+    
     label: 'Button',
   },
 };
