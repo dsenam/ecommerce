@@ -1,7 +1,5 @@
-
+import { Layout } from "../../components/organisms/Layout";
 
 export const Home = () => {
-  return (
-    <div>index</div>
-  )
-}
+  return <Layout title="Inicío"></Layout>;
+};
