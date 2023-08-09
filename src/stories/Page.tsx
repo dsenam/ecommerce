@@ -2,7 +2,7 @@ import React from 'react';
 
 
 import './page.css';
-import { Header } from '../components/molecules/Header';
+import { Header } from '../components/organisms/Header';
 
 type User = {
   name: string;

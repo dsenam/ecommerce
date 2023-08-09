@@ -1,7 +1,7 @@
-import "./header.css";
 import { Button } from "../../atoms/Button";
 import MaisTodosLogo from "../../../assets/logo-mais-todos.webp";
 import { HeaderStyled } from "./styles";
+import IconButton from "../../atoms/IconButton";
 
 export const Header = () => (
   <HeaderStyled>
@@ -10,7 +10,7 @@ export const Header = () => (
     <div>
       <>
         <Button primary label="Adicionar Produto" />
-        <Button label="Sign up" />
+        <IconButton onClick={() => {}} />
       </>
     </div>
   </HeaderStyled>
