@@ -1,16 +1,17 @@
 import { ContainerProductStyled } from "./styles";
 import Span from "../../atoms/Span";
 import { Button } from "../../atoms/Button";
-import { useCart } from "../../../hooks/stores/useCart";
+
 
 interface ProductCardProps {
   imageSrc: string;
   title: string;
   description: string;
+  handleProduct: () => void
 }
 
-const ProductCard = ({ imageSrc, title, description }: ProductCardProps) => {
-  const { addToCart } = useCart();
+const ProductCard = ({ imageSrc, title, description, handleProduct }: ProductCardProps) => {
+ 
   return (
     <ContainerProductStyled>
       <img src={imageSrc} alt={title} />
@@ -20,7 +21,7 @@ const ProductCard = ({ imageSrc, title, description }: ProductCardProps) => {
         <Button
           primary
           label="Adicionar ao carrinho"
-          onClick={() => addToCart()}
+          onClick={handleProduct}
         />
       </div>
     </ContainerProductStyled>

@@ -8,15 +8,13 @@ interface NewProductDataProps {
   price: string;
 }
 
-
-interface IGetProducts {
+export interface IGetProducts {
   id: string;
   data: {
     imageSrc: string;
-  title: string;
-  description: string;
-  }
-  
+    title: string;
+    description: string;
+  };
 }
 
 export const useCreateNewProduct = () => {
