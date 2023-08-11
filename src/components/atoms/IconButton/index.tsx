@@ -1,16 +1,18 @@
-import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { IconButtonStyled } from "./style";
 
 interface IconButtonProps {
-  onClick: () => void
+  onClick: () => void;
 }
 
 const IconButton = ({ onClick }: IconButtonProps) => {
+  
   return (
-    <IconButtonStyled onClick={onClick}>
-      <FaShoppingCart />
-    </IconButtonStyled>
+    <>
+      <IconButtonStyled onClick={onClick}>
+        <FaShoppingCart />
+      </IconButtonStyled>
+    </>
   );
 };
 

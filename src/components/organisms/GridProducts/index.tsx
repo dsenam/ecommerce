@@ -14,6 +14,7 @@ const GridProducts = () => {
     <GridContainer>
       {data?.map((product) => (
         <ProductCard
+          key={product.id}
           imageSrc={product.data.imageSrc}
           title={product.data.title}
           description={product.data.description}
