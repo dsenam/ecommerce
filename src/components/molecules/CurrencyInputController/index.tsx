@@ -1,13 +1,13 @@
 import React from "react";
-import { Control, Controller,  UseFormSetValue } from "react-hook-form";
+import { Control, Controller, UseFormSetValue } from "react-hook-form";
 
 import { CurrencyInputStyled } from "./styles";
-import { Inputs } from "../../../pages/AddProduct";
+import { Inputs } from "../../organisms/Forms/FormAddProduct";
 
 interface CurrencyInputProps {
   name: "name" | "price";
   control: Control<Inputs>;
-  setValue:UseFormSetValue<Inputs>;
+  setValue: UseFormSetValue<Inputs>;
 }
 
 const CurrencyInputField: React.FC<CurrencyInputProps> = ({
@@ -30,7 +30,7 @@ const CurrencyInputField: React.FC<CurrencyInputProps> = ({
           value={field.value}
           onValueChange={(value, name) => {
             field.onChange(name, value);
-            setValue("price",value as string );
+            setValue("price", value as string);
           }}
         />
       )}

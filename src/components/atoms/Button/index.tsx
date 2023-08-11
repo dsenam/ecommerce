@@ -4,7 +4,7 @@ interface ButtonProps {
   primary?: boolean;
   label: string;
   onClick?: () => void;
-  type: 'button' | 'submit'
+  type?: 'button' | 'submit'
 }
 
 export const Button = ({

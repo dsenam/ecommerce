@@ -1,3 +1,4 @@
+import { lighten } from "polished";
 import styled from "styled-components";
 
 export const ButtonStyled = styled.button<{
@@ -17,4 +18,9 @@ export const ButtonStyled = styled.button<{
   font-size: 1rem;
   padding: 0.6rem 1rem;
   width: ${(props) => props.$width};
+
+  &:hover {
+    background-color:  ${(props) =>
+    props.$primary ? lighten(0.1, props.theme.color.primary)  : lighten(0.2, props.theme.color.secondary)};
+  }
 `;

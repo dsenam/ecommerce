@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -9,6 +9,10 @@ import Span from "../../../atoms/Span";
 import CurrencyInputField from "../../../molecules/CurrencyInputController";
 import { Button } from "../../../atoms/Button";
 import { FormContainerStyled } from "./styles";
+import { useCreateNewProduct } from "../../../../hooks/requests/useProduct";
+import { successToast } from "../../../../utils/toasts.utils";
+import { DICTIONARY } from "../../../../constants/dictionary.constant";
+import { useQueryClient } from "@tanstack/react-query";
 
 export type Inputs = {
   name: string;
@@ -31,7 +35,20 @@ const FormAddProduct: React.FC = () => {
     formState: { errors },
   } = useForm<Inputs>({ resolver: yupResolver(schema) });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const queryClient = useQueryClient();
+  const { mutate, isSuccess } = useCreateNewProduct();
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    mutate(data);
+  };
+
+  useEffect(() => {
+    if (isSuccess) {
+      successToast(DICTIONARY.SUCCESS_ADD_PRODUCT);
+      queryClient.refetchQueries();
+    }
+  }, [isSuccess, queryClient]);
+
   return (
     <FormContainerStyled onSubmit={handleSubmit(onSubmit)}>
       <Input
