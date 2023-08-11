@@ -1,5 +1,6 @@
 export const API = {
     PRODUCT : {
-        POST: '/products'
+        POST: '/products',
+        GET: '/products',
     }
 }

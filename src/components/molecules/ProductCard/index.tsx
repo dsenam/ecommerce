@@ -14,7 +14,9 @@ const ProductCard = ({ imageSrc, title, description }: ProductCardProps) => {
       <img src={imageSrc} alt={title}  />
       <h3>{title}</h3>
       <Span label={description} />
+      <div>
       <Button primary label="Comprar" onClick={() => alert('Alou')} />
+      </div>
     </ContainerProductStyled>
   );
 };
