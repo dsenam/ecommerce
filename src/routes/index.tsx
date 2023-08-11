@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Home } from "../pages/Home";
-import { AddProduct } from "../pages/AddProduct";
+import { EditProduct } from "../pages/Edit";
 import { ROUTES } from "../constants/routes.constants";
+import { Checkout } from "../pages/Checkout";
 
 export const router = createBrowserRouter([
   {
@@ -10,6 +11,11 @@ export const router = createBrowserRouter([
   },
   {
     path: ROUTES.CREATE_PRODUCT,
-    element: <AddProduct />,
+    element: <EditProduct />,
+  },
+
+  {
+    path: ROUTES.CHECKOUT,
+    element: <Checkout />,
   },
 ]);

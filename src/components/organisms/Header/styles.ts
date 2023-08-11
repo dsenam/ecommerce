@@ -7,6 +7,10 @@ export const HeaderStyled = styled.header`
   align-items: center;
   justify-content: space-between;
 
+  img {
+    cursor: pointer;
+  }
+
   div {
     display: flex;
     justify-content: space-between;

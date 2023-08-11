@@ -7,11 +7,11 @@ import ProductCard from "../../molecules/ProductCard";
 const GridProducts = () => {
   const { data, isLoading } = useGetProducts();
 
-  const { addQuantity, addProduct, checkoutProducts } = useCheckoutStore();
+  const {  addProduct } = useCheckoutStore();
 
   const handleCart = (product: IGetProducts) => {
     
-    addQuantity();
+    
     addProduct(product);
   };
 
@@ -19,7 +19,7 @@ const GridProducts = () => {
     return <Spinner />;
   }
 
-  console.log(checkoutProducts)
+  
   return (
     <GridContainer>
       {data?.map((product) => (

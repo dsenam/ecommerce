@@ -2,25 +2,44 @@ import { create } from "zustand";
 import { IGetProducts } from "../requests/useProduct";
 
 interface CheckoutState {
-  checkoutProducts: IGetProducts[];
+  checkoutProducts: CkeckoutProduct[];
   addProduct: (product: IGetProducts) => void;
   removeProduct: (id: string) => void;
-  quantitiyItems: number
-  addQuantity: () => void
+}
+
+interface CkeckoutProduct extends IGetProducts {
+  quantity: number
 }
 
 export const useCheckoutStore = create<CheckoutState>((set) => ({
   checkoutProducts: [],
-  quantitiyItems: 0,
+
   addProduct: (product: IGetProducts) => {
-    set((state) => ({
-        checkoutProducts: [...state.checkoutProducts, product],
-    }));
+    set((state) => {
+      const existingProductIndex = state.checkoutProducts.findIndex(
+        (item) => item.id === product.id
+      );
+  
+      if (existingProductIndex !== -1) {
+        // Produto já está no carrinho, incrementar quantidade
+        const updatedProducts = [...state.checkoutProducts];
+        updatedProducts[existingProductIndex].quantity += 1;
+        return {
+          checkoutProducts: updatedProducts,
+        };
+      } else {
+        // Produto não está no carrinho, adicionar normalmente
+        return {
+          checkoutProducts: [...state.checkoutProducts, { ...product, quantity: 1 }],
+        };
+      }
+    });
   },
   removeProduct: (id) => {
     set((state) => ({
-        checkoutProducts: state.checkoutProducts.filter((checkoutProducts) => checkoutProducts.id !== id),
+      checkoutProducts: state.checkoutProducts.filter(
+        (checkoutProducts) => checkoutProducts.id !== id
+      ),
     }));
   },
-  addQuantity: () => set((state) => ({ quantitiyItems: state.quantitiyItems + 1 })),
 }));

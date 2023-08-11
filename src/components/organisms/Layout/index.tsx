@@ -3,7 +3,7 @@ import { Header } from "../Header";
 import { ContainerStyled, ContentStyled } from "./styles";
 
 interface LayoutProps {
-  children: ReactElement;
+  children: ReactElement | ReactElement[];
   title: string;
 }
 

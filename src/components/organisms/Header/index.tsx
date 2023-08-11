@@ -9,15 +9,15 @@ import { useCheckoutStore } from "../../../hooks/stores/useCheckout";
 
 
 export const Header = () => {
-  const { quantitiyItems } = useCheckoutStore();
+  const {  checkoutProducts } = useCheckoutStore();
   const navigate = useNavigate();
   return (
     <HeaderStyled>
-      <img src={MaisTodosLogo} alt="Mais Todos Logo" width={150} />
+      <img onClick={() => navigate(ROUTES.HOME)} src={MaisTodosLogo} alt="Mais Todos Logo" width={150} />
 
     <div>
-      <Badge itemCount={quantitiyItems} />
-      <IconButton onClick={() => navigate(ROUTES.CREATE_PRODUCT)} />
+      <Badge itemCount={checkoutProducts.length} />
+      <IconButton onClick={() => navigate(ROUTES.CHECKOUT)} />
       </div>
     </HeaderStyled>
   );

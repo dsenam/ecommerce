@@ -1,9 +1,9 @@
 import FormAddProduct from "../../components/organisms/Forms/FormAddProduct";
 import { Layout } from "../../components/organisms/Layout";
 
-export const AddProduct = () => {
+export const EditProduct = () => {
   return (
-    <Layout title="Criar Produto">
+    <Layout title="Editar Produto">
       <FormAddProduct />
     </Layout>
   );

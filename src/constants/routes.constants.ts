@@ -1,4 +1,5 @@
 export const ROUTES = {
     HOME: '/',
-    CREATE_PRODUCT: '/add-product'
+    CREATE_PRODUCT: '/add-product',
+    CHECKOUT: '/checkout'
 }
