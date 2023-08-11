@@ -1,10 +1,10 @@
 import { ReactElement } from "react";
 
 import { GridContainerStyled } from "./styles";
-import ProductCard from "../../molecules/ProductCard";
+
 
 interface GridContainerProps {
-  children: ReactElement
+  children?: ReactElement | ReactElement[]
 }
 
 export const GridContainer = ({children}: GridContainerProps) => {
