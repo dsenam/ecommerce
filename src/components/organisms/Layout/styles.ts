@@ -9,12 +9,12 @@ export const ContainerStyled = styled.div`
 export const ContentStyled = styled.div`
     width: 80%;
     padding: 1rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     h1 {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 `;

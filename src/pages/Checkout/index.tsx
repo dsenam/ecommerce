@@ -3,32 +3,32 @@ import List from "../../components/atoms/List";
 import Span from "../../components/atoms/Span";
 import ListItem from "../../components/molecules/ListItem";
 import { Layout } from "../../components/organisms/Layout";
+import { ROUTES } from "../../constants/routes.constants";
 import { useCheckoutStore } from "../../hooks/stores/useCheckout";
-import { getStripe } from "../../services/stripe.service";
+import {
+  formatStripeLineItems,
+  getStripe,
+} from "../../services/stripe.service";
 import { errorToast } from "../../utils/toasts.utils";
 
 export const Checkout = () => {
   const { checkoutProducts, removeProduct } = useCheckoutStore();
+  const url = window.location.origin;
 
   async function handleCheckout() {
     const stripe = await getStripe();
-    if(stripe) {
+    const lineItems = formatStripeLineItems(checkoutProducts);
+
+    if (stripe) {
       const { error } = await stripe.redirectToCheckout({
-        lineItems: [
-          {
-            price: "price_1Ne5B6JapstRzgRuflPJwSaX",
-            quantity: 1,
-          },
-        ],
+        lineItems,
         mode: "payment",
-        successUrl: `http://localhost:3000/success`,
-        cancelUrl: `http://localhost:3000/cancel`,
-        customerEmail: "customer@email.com",
+        successUrl: `${url}${ROUTES.PAYMENT_FEEDBACK}?checkout=success`,
+        cancelUrl: `${url}${ROUTES.PAYMENT_FEEDBACK}?checkout=error`,
       });
-      
-      errorToast(error.message as string)
+
+      errorToast(error.message as string);
     }
-    
   }
 
   return (
@@ -57,5 +57,4 @@ export const Checkout = () => {
       />
     </Layout>
   );
-
 };

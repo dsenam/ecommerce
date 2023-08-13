@@ -12,15 +12,13 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <>
-      
-        <QueryClientProvider client={queryClient}>
-          <ThemeProvider theme={theme}>
-            <ToastContainer />
-            <GlobalStyle />
-            <RouterProvider router={router} />
-          </ThemeProvider>
-        </QueryClientProvider>
-      
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider theme={theme}>
+          <ToastContainer />
+          <GlobalStyle />
+          <RouterProvider router={router} />
+        </ThemeProvider>
+      </QueryClientProvider>
     </>
   );
 }

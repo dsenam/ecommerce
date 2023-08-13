@@ -10,6 +10,11 @@ export const ContainerProductStyled = styled.div`
   display: flex;
   flex-direction: column;
 
+  span {
+    font-size: 1.5rem;
+    
+  }
+
   img {
     max-width: 100%;
     height: auto;

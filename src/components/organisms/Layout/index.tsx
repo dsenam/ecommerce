@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import { ReactElement } from "react";
 import { Header } from "../Header";
 import { ContainerStyled, ContentStyled } from "./styles";
 

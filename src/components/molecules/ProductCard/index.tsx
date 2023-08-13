@@ -6,17 +6,17 @@ import { Button } from "../../atoms/Button";
 interface ProductCardProps {
   imageSrc: string;
   title: string;
-  description: string;
+  price: string;
   handleProduct: () => void
 }
 
-const ProductCard = ({ imageSrc, title, description, handleProduct }: ProductCardProps) => {
+const ProductCard = ({ imageSrc, title, price, handleProduct }: ProductCardProps) => {
  
   return (
     <ContainerProductStyled>
       <img src={imageSrc} alt={title} />
       <h3>{title}</h3>
-      <Span label={description} />
+      <Span label={price} />
       <div>
         <Button
           primary

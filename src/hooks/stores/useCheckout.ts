@@ -2,12 +2,12 @@ import { create } from "zustand";
 import { IGetProducts } from "../requests/useProduct";
 
 interface CheckoutState {
-  checkoutProducts: CkeckoutProduct[];
+  checkoutProducts: CheckoutProduct[];
   addProduct: (product: IGetProducts) => void;
   removeProduct: (id: string) => void;
 }
 
-interface CkeckoutProduct extends IGetProducts {
+export interface CheckoutProduct extends IGetProducts {
   quantity: number
 }
 

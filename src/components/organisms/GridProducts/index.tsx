@@ -27,7 +27,7 @@ const GridProducts = () => {
           key={product.id}
           imageSrc={product.data.imageSrc}
           title={product.data.title}
-          description={product.data.description}
+          price={product.data.price}
           handleProduct={() => handleCart(product)}
         />
       ))}
