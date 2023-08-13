@@ -27,8 +27,13 @@ export const useCreateNewProduct = () => {
 
 export const useGetProducts = (): UseQueryResult<IGetProducts[]> => {
   return useQuery([QUERY_KEYS.getProducts], async () => {
+    /* const success = status ? `&success=${status}` : '';
+    const canceled = status ? `&canceled=${status}` : ''; */
+
+
     const response = await getData(`${API.PRODUCT.GET}`);
 
     return response;
   });
 };
+

@@ -21,14 +21,14 @@ export const useCheckoutStore = create<CheckoutState>((set) => ({
       );
   
       if (existingProductIndex !== -1) {
-        // Produto já está no carrinho, incrementar quantidade
+        
         const updatedProducts = [...state.checkoutProducts];
         updatedProducts[existingProductIndex].quantity += 1;
         return {
           checkoutProducts: updatedProducts,
         };
       } else {
-        // Produto não está no carrinho, adicionar normalmente
+        
         return {
           checkoutProducts: [...state.checkoutProducts, { ...product, quantity: 1 }],
         };
