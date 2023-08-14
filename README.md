@@ -17,7 +17,7 @@ Para executar o sistema localmente em sua máquina, siga as etapas abaixo:
    npm install
    ```
 
-```
+
 
 
 4. Após a instalação das dependências, você pode executar os seguintes comandos:
@@ -144,5 +144,4 @@ O projeto segue uma estrutura organizada, separando componentes, hooks, páginas
 
 Esta documentação fornece uma visão geral da estrutura, componentes, hooks, serviços e padrões utilizados no projeto "Ecommerce". Ela serve como referência para orientar o desenvolvimento e a manutenção do código.
 
-Lembre-se de manter a documentação atualizada à medida que o projeto evolui e receber feedback da equipe. Isso ajudará a garantir que todos compreendam o projeto e possam colaborar de maneira eficaz.
-```
+
