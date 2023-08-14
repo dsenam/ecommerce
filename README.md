@@ -1,5 +1,8 @@
 # Documentação do Projeto - Ecommerce
 
+# [EM PRODUÇÃO NETLIFY](https://main--bespoke-mochi-8b24b2.netlify.app/)
+# [BACKEND REAL EM NODE+EXPRESS+FIRESTORE+CLOUD FUNCTIONS](https://github.com/dsenam/ecommerce-crud-back)
+
 ## Como Rodar o Sistema Localmente
 
 Para executar o sistema localmente em sua máquina, siga as etapas abaixo:
