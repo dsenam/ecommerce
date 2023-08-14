@@ -7,7 +7,7 @@ import * as yup from "yup";
 import Input from "../../../atoms/Input";
 import Span from "../../../atoms/Span";
 import CurrencyInputField from "../../../molecules/CurrencyInputController";
-import { Button } from "../../../atoms/Button";
+import Button  from "../../../atoms/Button";
 import { FormContainerStyled } from "./styles";
 import { useCreateNewProduct } from "../../../../hooks/requests/useProduct";
 import { successToast } from "../../../../utils/toasts.utils";
@@ -26,7 +26,7 @@ const schema = yup
   })
   .required();
 
-const FormAddProduct: React.FC = () => {
+const FormEditProduct: React.FC = () => {
   const {
     register,
     handleSubmit,
@@ -72,4 +72,4 @@ const FormAddProduct: React.FC = () => {
   );
 };
 
-export default FormAddProduct;
+export default FormEditProduct;

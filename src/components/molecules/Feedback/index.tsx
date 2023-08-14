@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import CenterContainer from "../../atoms/CenterContainer";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 import { FeedbackContentStyled } from "./styles";
-import { Button } from "../../atoms/Button";
+import Button from "../../atoms/Button";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../../constants/routes.constants";
 

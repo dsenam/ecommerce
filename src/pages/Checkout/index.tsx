@@ -1,4 +1,4 @@
-import { Button } from "../../components/atoms/Button";
+import  Button  from "../../components/atoms/Button";
 import List from "../../components/atoms/List";
 import Span from "../../components/atoms/Span";
 import ListItem from "../../components/molecules/ListItem";

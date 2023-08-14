@@ -1,6 +1,6 @@
 import { ContainerProductStyled } from "./styles";
 import Span from "../../atoms/Span";
-import { Button } from "../../atoms/Button";
+import Button  from "../../atoms/Button";
 
 
 interface ProductCardProps {
