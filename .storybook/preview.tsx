@@ -4,8 +4,14 @@ import { withThemeFromJSXProvider } from "@storybook/addon-styling";
 import { theme as themes } from "../src/styles/theme";
 import {
   ThemeProvider as Provider,
+  ThemeProvider,
   createGlobalStyle,
 } from "styled-components";
+import { MemoryRouter } from 'react-router-dom';
+import { theme } from '../src/styles/theme';
+
+
+import React from "react";
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -20,6 +26,15 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
+const MemoryRouterDecorator = (storyFn) => (
+  <MemoryRouter>
+    {storyFn()}
+  </MemoryRouter>
+);
+
+
+
+
 const preview: Preview = {
   decorators: [
     withThemeFromJSXProvider({
@@ -27,6 +42,12 @@ const preview: Preview = {
       Provider,
       GlobalStyles,
     }),
+    MemoryRouterDecorator,
+    (Story) => (
+      <ThemeProvider theme={theme}>
+        <Story />
+      </ThemeProvider>
+    ),
   ],
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
