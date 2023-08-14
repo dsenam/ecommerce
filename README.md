@@ -50,6 +50,13 @@ npm test
 
 ```
 
+Testar interativamente
+Em testes interativos, use um número de cartão como 4242 4242 4242 4242. Informe o número do cartão no Dashboard ou em qualquer formulário de pagamento.
+
+Use uma data futura válida, como 12/34.
+Use qualquer CVC de três dígitos (quatro em cartões American Express).
+Use qualquer valor nos outros campos do formulário.
+
 ## Introdução
 
 Esta documentação fornece informações sobre a estrutura, componentes, utilitários e padrões utilizados no projeto "Ecommerce". O projeto é um sistema de e-commerce que permite aos usuários adicionar produtos ao carrinho e realizar o checkout usando o Stripe como plataforma de pagamento.
