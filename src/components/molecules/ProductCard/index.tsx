@@ -1,6 +1,7 @@
 import { ContainerProductStyled } from "./styles";
 import Span from "../../atoms/Span";
 import Button  from "../../atoms/Button";
+import { Link } from "react-router-dom";
 
 
 interface ProductCardProps {
@@ -8,9 +9,10 @@ interface ProductCardProps {
   title: string;
   price: string;
   handleProduct: () => void
+  productId: string
 }
 
-const ProductCard = ({ imageSrc, title, price, handleProduct }: ProductCardProps) => {
+const ProductCard = ({ imageSrc, title, price, handleProduct,productId }: ProductCardProps) => {
  
   return (
     <ContainerProductStyled>
@@ -23,7 +25,11 @@ const ProductCard = ({ imageSrc, title, price, handleProduct }: ProductCardProps
           label="Adicionar ao carrinho"
           onClick={handleProduct}
         />
+
+
       </div>
+      <Link to={`edit-product/${productId}`}>Editar produto</Link>
+     
     </ContainerProductStyled>
   );
 };

@@ -1,4 +1,7 @@
-import { IGetProducts, useGetProducts } from "../../../hooks/requests/useProduct";
+import {
+  IGetProducts,
+  useGetProducts,
+} from "../../../hooks/requests/useProduct";
 import { useCheckoutStore } from "../../../hooks/stores/useCheckout";
 import GridContainer from "../../atoms/GridContainer";
 import Spinner from "../../atoms/Spinner";
@@ -7,11 +10,9 @@ import ProductCard from "../../molecules/ProductCard";
 const GridProducts = () => {
   const { data, isLoading } = useGetProducts();
 
-  const {  addProduct } = useCheckoutStore();
+  const { addProduct } = useCheckoutStore();
 
   const handleCart = (product: IGetProducts) => {
-    
-    
     addProduct(product);
   };
 
@@ -19,7 +20,6 @@ const GridProducts = () => {
     return <Spinner />;
   }
 
-  
   return (
     <GridContainer>
       {data?.map((product) => (
@@ -29,6 +29,7 @@ const GridProducts = () => {
           title={product.data.title}
           price={product.data.price}
           handleProduct={() => handleCart(product)}
+          productId={product.id}
         />
       ))}
     </GridContainer>

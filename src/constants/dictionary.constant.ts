@@ -1,3 +1,3 @@
 export const DICTIONARY = {
-    SUCCESS_ADD_PRODUCT: "Produto adicionado com sucesso"
+    SUCCESS_EDIT_PRODUCT: "Produto editado com sucesso"
 }

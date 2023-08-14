@@ -1,6 +1,6 @@
 export const ROUTES = {
     HOME: '/',
-    CREATE_PRODUCT: '/add-product',
+    EDIT_PRODUCT: '/edit-product/:productId',
     CHECKOUT: '/checkout',
     PAYMENT_FEEDBACK: '/payment-feedback'
 

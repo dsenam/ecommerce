@@ -1,3 +1,4 @@
 export const QUERY_KEYS = {
-    getProducts: 'getProducts'
+    getProducts: 'getProducts',
+    getProductsById: 'getProductsById'
 }

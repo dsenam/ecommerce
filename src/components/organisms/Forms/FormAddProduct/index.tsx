@@ -6,23 +6,24 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Input from "../../../atoms/Input";
 import Span from "../../../atoms/Span";
-import CurrencyInputField from "../../../molecules/CurrencyInputController";
-import Button  from "../../../atoms/Button";
+import Button from "../../../atoms/Button";
 import { FormContainerStyled } from "./styles";
-import { useCreateNewProduct } from "../../../../hooks/requests/useProduct";
+import { useEditProduct } from "../../../../hooks/requests/useProduct";
 import { successToast } from "../../../../utils/toasts.utils";
 import { DICTIONARY } from "../../../../constants/dictionary.constant";
 import { useQueryClient } from "@tanstack/react-query";
+import { useParams } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../../../constants/routes.constants";
 
 export type Inputs = {
-  name: string;
-  price: string;
+  title: string;
 };
 
 const schema = yup
   .object({
-    name: yup.string().required(),
-    price: yup.string().required(),
+    title: yup.string().required(),
   })
   .required();
 
@@ -30,22 +31,25 @@ const FormEditProduct: React.FC = () => {
   const {
     register,
     handleSubmit,
-    control,
     setValue,
     formState: { errors },
   } = useForm<Inputs>({ resolver: yupResolver(schema) });
 
+  const { productId } = useParams();
+  const navigate = useNavigate();
   const queryClient = useQueryClient();
-  const { mutate, isSuccess } = useCreateNewProduct();
+  const { mutate, isSuccess, isLoading } = useEditProduct({ productId });
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log(data);
     mutate(data);
   };
 
   useEffect(() => {
     if (isSuccess) {
-      successToast(DICTIONARY.SUCCESS_ADD_PRODUCT);
+      successToast(DICTIONARY.SUCCESS_EDIT_PRODUCT);
       queryClient.refetchQueries();
+      navigate(ROUTES.HOME);
     }
   }, [isSuccess, queryClient]);
 
@@ -53,21 +57,13 @@ const FormEditProduct: React.FC = () => {
     <FormContainerStyled onSubmit={handleSubmit(onSubmit)}>
       <Input
         type="text"
-        {...register("name")}
+        {...register("title")}
         placeholder="Nome do produto"
-        onChange={(e) => setValue("name", e.target.value)}
+        onChange={(e) => setValue("title", e.target.value)}
       />
-      {errors.name && <Span error label={`O campo nome é obrigatório`} />}
+      {errors.title && <Span error label={`O campo nome é obrigatório`} />}
 
-      <CurrencyInputField
-        {...register("price")}
-        name="price"
-        control={control}
-        setValue={setValue}
-      />
-      {errors.price && <Span error label={`O campo preço é obrigatório`} />}
-
-      <Button primary type="submit" label="Enviar" />
+      <Button disabled={isLoading} primary type="submit" label="Enviar" />
     </FormContainerStyled>
   );
 };

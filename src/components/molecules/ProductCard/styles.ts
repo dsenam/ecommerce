@@ -38,5 +38,12 @@ export const ContainerProductStyled = styled.div`
     width: 100%;
     
   }
+
+  a {
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: black;
+  }
 `;
 

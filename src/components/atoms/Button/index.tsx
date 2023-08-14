@@ -5,16 +5,20 @@ interface ButtonProps {
   label: string;
   onClick?: () => void;
   type?: 'button' | 'submit'
+  disabled?: boolean
+
 }
 
 const Button = ({
   primary = false,
   label,
   type= 'button',
+  disabled,
   ...props
+  
 }: ButtonProps) => {
   return (
-    <ButtonStyled $primary={primary} type={type} {...props}>
+    <ButtonStyled disabled={disabled} $primary={primary} type={type} {...props}>
       {label}
     </ButtonStyled>
   );
