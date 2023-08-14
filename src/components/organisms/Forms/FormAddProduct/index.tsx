@@ -12,9 +12,7 @@ import { useEditProduct } from "../../../../hooks/requests/useProduct";
 import { successToast } from "../../../../utils/toasts.utils";
 import { DICTIONARY } from "../../../../constants/dictionary.constant";
 import { useQueryClient } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
-
-import { useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../../../constants/routes.constants";
 
 export type Inputs = {
