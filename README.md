@@ -1,4 +1,51 @@
-# Documentação do Projeto - Nome do Projeto
+# Documentação do Projeto - Ecommerce
+
+## Como Rodar o Sistema Localmente
+
+Para executar o sistema localmente em sua máquina, siga as etapas abaixo:
+
+1. Certifique-se de ter o Node.js e o npm instalados em sua máquina.
+
+2. Abra o terminal e navegue até o diretório raiz do projeto.
+
+3. Execute o seguinte comando para instalar as dependências:
+
+   ```
+   npm install
+   ```
+
+```
+
+
+4. Após a instalação das dependências, você pode executar os seguintes comandos:
+
+- Para iniciar o servidor de desenvolvimento local:
+
+```
+
+npm run dev
+
+```
+
+Isso iniciará o servidor de desenvolvimento Vite e você poderá acessar o sistema em http://localhost:3000.
+
+- Para construir o projeto para produção:
+
+```
+
+npm run build
+
+```
+
+Esse comando irá compilar o projeto e gerar os arquivos otimizados na pasta "dist".
+
+- Para executar os testes:
+
+```
+
+npm test
+
+```
 
 ## Introdução
 
@@ -6,20 +53,21 @@ Esta documentação fornece informações sobre a estrutura, componentes, utilit
 
 ## Índice
 
-1. [Estrutura do Projeto](#estrutura-do-projeto)
-2. [Componentes](#componentes)
-   - [Átomos](#átomos)
-   - [Moléculas](#moléculas)
-   - [Organismos](#organismos)
-3. [Hooks](#hooks)
-   - [Requisições](#requisições)
-   - [Stores](#stores)
-4. [Serviços](#serviços)
-   - [Requisições HTTP](#requisições-http)
-   - [Stripe](#stripe)
-5. [Páginas](#páginas)
-6. [Rotas](#rotas)
-7. [Utilitários](#utilitários)
+1. [Como Rodar o Sistema Localmente](#como-rodar-o-sistema-localmente)
+2. [Estrutura do Projeto](#estrutura-do-projeto)
+3. [Componentes](#componentes)
+- [Átomos](#átomos)
+- [Moléculas](#moléculas)
+- [Organismos](#organismos)
+4. [Hooks](#hooks)
+- [Requisições](#requisições)
+- [Stores](#stores)
+5. [Serviços](#serviços)
+- [Requisições HTTP](#requisições-http)
+- [Stripe](#stripe)
+6. [Páginas](#páginas)
+7. [Rotas](#rotas)
+8. [Utilitários](#utilitários)
 
 ## Estrutura do Projeto
 
@@ -94,3 +142,4 @@ O projeto segue uma estrutura organizada, separando componentes, hooks, páginas
 Esta documentação fornece uma visão geral da estrutura, componentes, hooks, serviços e padrões utilizados no projeto "Ecommerce". Ela serve como referência para orientar o desenvolvimento e a manutenção do código.
 
 Lembre-se de manter a documentação atualizada à medida que o projeto evolui e receber feedback da equipe. Isso ajudará a garantir que todos compreendam o projeto e possam colaborar de maneira eficaz.
+```
