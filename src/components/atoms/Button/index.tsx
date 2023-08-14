@@ -7,7 +7,7 @@ interface ButtonProps {
   type?: 'button' | 'submit'
 }
 
-export const Button = ({
+const Button = ({
   primary = false,
   label,
   type= 'button',
@@ -19,3 +19,5 @@ export const Button = ({
     </ButtonStyled>
   );
 };
+
+export default Button

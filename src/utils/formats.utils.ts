@@ -7,3 +7,6 @@ export const formatUrl = (url: string, params?: string[] | string): string => {
 
   return url.replace(matchParams, replacer);
 };
+
+export const rgbToCssColor = (rgb: string) =>
+  `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;

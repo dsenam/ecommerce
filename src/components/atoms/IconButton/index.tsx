@@ -9,7 +9,7 @@ const IconButton = ({ onClick }: IconButtonProps) => {
   
   return (
     <>
-      <IconButtonStyled onClick={onClick}>
+      <IconButtonStyled data-testid="icon-button" onClick={onClick}>
         <FaShoppingCart />
       </IconButtonStyled>
     </>
