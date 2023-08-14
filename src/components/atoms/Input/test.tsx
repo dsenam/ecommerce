@@ -24,7 +24,7 @@ describe("Input Component", () => {
       </ThemeProvider>
     );
 
-    const inputElement = getByTestId("input");
+    const inputElement = getByTestId("input") as HTMLInputElement;
     fireEvent.change(inputElement, { target: { value: "Test Value" } });
 
     expect(mockOnChange).toHaveBeenCalled();
